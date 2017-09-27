@@ -1,0 +1,65 @@
+﻿@model WebApplication.Models.UsuarioLoginViewModel
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WebApplication</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    @Styles.Render("~/AdminLTE/plugins/icheck/css/sqare/blue")
+</head>
+    <body>
+    <div class="login-box container" >
+        <div class="login-logo">
+            <a href="@Url.Action("DashboardV1", "Home")">Bem vindo ao <b>sistema!</b></a>
+        </div>
+        <div class="login-box-body">
+            <p class="login-box-msg">Faça login para iniciar sua sessão</p>
+            <form href="#" method="post">
+               
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                         
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control", @placeholder = "Login", } })
+                        @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                        <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control", @placeholder = "Senha", } })
+                        @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                   <br />
+                <div class="row">
+                    
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Logar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @section Scripts {
+     
+    }
+    @Styles.Render("~/AdminLTE/plugins/font-awesome/css")
+    @Styles.Render("~/AdminLTE/plugins/ionicons/css")
+    @Styles.Render("~/AdminLTE/bootstrap/css")
+    @Styles.Render("~/AdminLTE/dist/css")
+    @Styles.Render("~/AdminLTE/dist/css/skins")
+
+   
+        
+
+</body>
+</html>
